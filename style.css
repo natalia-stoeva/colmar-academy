@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6, p {
     grid-auto-rows: auto; 
     align-content: center;
   }
-
   .item1 {
     grid-area: 1 / 1 / span 1 / span 4;
   }
@@ -111,6 +110,9 @@ h1, h2, h3, h4, h5, h6, p {
     color: #4A4A4A;
     text-decoration: none;
     padding-right: 16px;
+}
+.header-mobile {
+    display: none;
 }
 
 /* Banner section */
@@ -214,4 +216,110 @@ footer a{
     text-decoration: none;
     color: #4A4A4A;
     padding-right: 20px;
+}
+
+/* Mobile Version */
+@media only screen and (max-width:768px){
+
+    /* Display Mobile */
+    .grid-container{
+        display: block; 
+        margin: 0;    
+        padding: 0;  
+    }
+    .courses-grid-container{
+        display: block;
+    }
+    .grid-container-exibit{
+        display: block;
+    }
+
+    /* Header Mobile */
+    header{
+        display: none;
+    }
+    .header-mobile{
+        display: inline-flex;
+        height: 64px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    /* Banner mobile */
+    .img-holder img {
+        max-width: 100%;
+    }
+    .banner img {      
+        padding: 0 0 32px 0;
+    }
+    .banner-right-container{
+        padding-left: 16px;
+    }
+    .banner-right-container p{
+        padding-bottom: 24px;
+    }
+    .button {
+        background-color: #9B9B9B;
+        color: white;
+        padding: 10px 15px 10px 15px;
+        margin-bottom: 32px;
+    }
+    /* Information */
+    .item4 {
+        display: none;
+    }
+    .information-article{
+        display: block;
+    }
+    .article-img > img {
+        display: none;
+    }
+    .mobile-orientation{
+        background-image: url(../images/information-orientation-mobile.jpg);
+    }
+    .read-more {
+        padding-left: 16px;
+        padding-bottom: 64px;
+    }
+    .mobile-campus{
+        background-image: url(../images/information-campus-mobile.jpg);
+    }
+    .mobile-lecture{
+        background-image: url(../images/information-guest-lecture-mobile.jpg);
+    }
+    .mobile-orientation, .mobile-campus, .mobile-lecture {
+        background-size: cover;
+        height: 200px;
+        width: auto;
+        margin: 16px;
+    }
+    /* Courses  */
+    .courses-grid-container{
+        display: block;
+        margin: 0 16px;
+        padding: 0;
+        background-color: white;
+    }
+    .course-img>img{
+        display: none;
+    }
+    .course-description>p{
+        display: none;
+    }
+    .course-description>h3{
+        margin-bottom: 8px;
+    }
+    /* Exibit */
+    .grid-item1-video>h3,p{
+        display: none;
+    }
+    .grid-item2-fisma, .grid-item3-now{
+        display: none;
+    }
+    footer p {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+    footer a{
+        display: none;
+    }
 }
