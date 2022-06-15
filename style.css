@@ -1,15 +1,20 @@
 /* UNIVERSAL STYLE */
 html{
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #4A4A4A;
+}
+body {    
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 h1{
     font-size: 2rem;
 }
 h2{
     font-size: 1.7rem;
+    font-weight: 600;    
 }
 h3{
     font-size: 1.5rem;
@@ -23,28 +28,190 @@ h5{
 h6{
     font-size: 1.2rem;
 }
-/* Header */
-.header {
-    height: 64px;
-    width: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    background-color: antiquewhite; 
-    border: 1px solid black;   
+p{
+    font-size: 1rem;
 }
-.colmar-logo{
+h1, h2, h3, h4, h5, h6, p {
+    line-height: 1.5;
+    padding: 10px 10px;
+}
+
+/* grid area */
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 40% 30% auto;
+    padding: 32px 24px;
+    grid-auto-rows: auto; 
+    align-content: center;
+  }
+
+  .item1 {
+    grid-area: 1 / 1 / span 1 / span 4;
+  }
+  .item2 {
+   grid-area: 2 / 1 /span 1/ span 2;
+   }
+   .item3 {
+   grid-area: 2 / 3/ span 1/ span 2;  
+   }
+   .item4 {
+   grid-area: 3/ 1/ span 3/ span 2;
+   align-items: center;
+   }
+   .item5 {
+   grid-area: 3/ 3/ span 1/ span 2;
+   }
+   .item6 {
+   grid-area: 4/ 3/ span 1/ span 2;
+   }
+   .item7{
+   grid-area: 5/ 3/ span 1/ span 2;
+   }
+   .item8{
+   grid-area: 6/ 1/ span 1/span 4;
+   }
+
+   /* Courses Grid Area */
+ .courses-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;  
+    background-color: #D8D8D8;
+    grid-auto-rows: auto; 
+    overflow: hidden;
+    padding: 32px 72px;
+ }
+ .courses-grid-container > div {
+    background-color: #EAEBEC;    
+ } 
+
+   /* Header */
+   .flex-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 64px;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+}   
+   .colmar-logo {
     display: inline-flex;
     align-items: center;
-}
-nav ul li{
-    display: inline-flex;
-    align-content: center;
-}
-nav ul li a{
+   }
+   .colmar-logo img {
+    max-width: 50px;
+   }
+   nav ul {
+    display: inline-flex;  
+   }
+   nav ul li a{
     font-size: 1.5rem;
     color: #4A4A4A;
     text-decoration: none;
     padding-right: 16px;
+}
+
+/* Banner section */
+.banner  {
+    background-color: lightgray;
+}
+.right-text-container {
+    background-color: lightgray;
+}
+
+.img-holder img{
+    padding: 32px 24px;
+    max-width: 90%;   
+}
+.right-text-container {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+}
+.button {
+    background-color: #4A4A4A;
+    color: #D8D8D8;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Information */
+.information-article {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.information-article img {
+    max-width: 220px;
+    padding-right: 20px;
+}
+.information-article .read-more {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #4A90E2;
+}
+
+/* Courses */
+.start-learning {
+    text-align: center;
+    padding: 32px;    
+}
+.courses-grid-container img {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Thesis Exibit */
+.exibit h2{
+    text-align: center;
+    padding: 32px 0;
+}
+.grid-container-exibit {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;    
+    grid-gap: 24px;
+    width: 100%;
+    justify-items: start;
+    align-items: start;
+    border-bottom: 1px solid #4A4A4A;
+    padding-bottom: 32px ;
+}
+.grid-item1-video {
+    
+    grid-area: 1 / 1 /span 2/ span 1;
+}
+.grid-item1-video video{
+    max-width: 100%;
+}
+.grid-item2-fisma{
+    grid-area: 1/ 2/ span 1/ span 1;
+    display: inline-flex;
+    align-items: center;
+}
+.grid-item2-fisma img, .grid-item3-now img{
+    width: 32%;
+}
+.grid-item3-now{
+    grid-area: 2/ 2/ span 1/ span 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Footer */
+footer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 64px;
+}
+footer a{
+    display: inline;
+    text-decoration: none;
+    color: #4A4A4A;
+    padding-right: 20px;
 }
