@@ -35,36 +35,57 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.5;
     padding: 10px 10px;
 }
+/* variables */
+:root{
+    --bg-color-dark: #05152e;
+    --text-color: #c4ccd1;
+    --container-color: rgba(155, 175, 207, 0.5);
+    --container-color-dark: #152236;
+}
 
+body{
+    background-color: var(--bg-color-dark);
+    color: var(--text-color);
+}
 /* grid area */
 .grid-container {
     display: grid;
     grid-template-columns: 20% 40% 30% auto;
-    padding: 32px 24px;
+    /* padding: 32px 24px; */
     grid-auto-rows: auto; 
     align-content: center;
   }
   .item1 {
     grid-area: 1 / 1 / span 1 / span 4;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    opacity: 0.9;
   }
   .item2 {
    grid-area: 2 / 1 /span 1/ span 2;
+   margin-top: 64px;
    }
    .item3 {
    grid-area: 2 / 3/ span 1/ span 2;  
+   margin-top: 64px;
    }
    .item4 {
    grid-area: 3/ 1/ span 3/ span 2;
    align-items: center;
+   padding: 24px 15px;
    }
    .item5 {
    grid-area: 3/ 3/ span 1/ span 2;
+   padding: 24px 15px;
    }
    .item6 {
    grid-area: 4/ 3/ span 1/ span 2;
+   padding: 24px 15px;
    }
    .item7{
    grid-area: 5/ 3/ span 1/ span 2;
+   padding: 24px 15px;
    }
    .item8{
    grid-area: 6/ 1/ span 1/span 4;
@@ -75,7 +96,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 32px;  
-    background-color: #D8D8D8;
+    background-color: var(--container-color);
     grid-auto-rows: auto; 
     overflow: hidden;
     padding: 32px 72px;
@@ -93,7 +114,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: white;
+    background-color: var(--bg-color-dark);
 }   
    .colmar-logo {
     display: inline-flex;
@@ -107,9 +128,13 @@ h1, h2, h3, h4, h5, h6, p {
    }
    nav ul li a{
     font-size: 1.5rem;
-    color: #4A4A4A;
+    color: var(--text-color);
     text-decoration: none;
     padding-right: 16px;
+    opacity: 0.7;
+}
+nav ul li:hover{
+    transform: scale(1.1);
 }
 .header-mobile {
     display: none;
@@ -117,29 +142,35 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Banner section */
 .banner  {
-    background-color: lightgray;
+    background-color: var(--container-color);
 }
 .right-text-container {
-    background-color: lightgray;
+    background-color: var(--container-color);
 }
 
 .img-holder img{
     padding: 32px 24px;
     max-width: 90%;   
 }
+/* .img-holder:hover img{
+    filter: saturate(0.1) blur(1px);
+} */
 .right-text-container {
     display: flex;
     align-items: center;
     padding-right: 24px;
 }
 .button {
-    background-color: #4A4A4A;
+    background-color: var(--container-color-dark);
     color: #D8D8D8;
-    padding: 8px 0;
+    padding: 20px 0px;
     text-align: center;
     font-weight: 600;
+    border-radius: 20px;   
 }
-
+.button:hover{
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+}
 /* Information */
 .information-article {
     display: inline-flex;
@@ -156,15 +187,32 @@ h1, h2, h3, h4, h5, h6, p {
     text-decoration: none;
     color: #4A90E2;
 }
+.information-article:hover {
+    transform: scale(1.01);
+    background-color: var(--bg-color-dark);
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+}
 
 /* Courses */
 .start-learning {
     text-align: center;
-    padding: 32px;    
+    padding: 32px;
+    border-top: 1px solid var(--text-color);   
+    border-bottom: 1px solid var(--text-color);
+    opacity: 0.9;
+    
+}
+.courses-grid-container .course{
+    background-color:  var(--container-color-dark);
 }
 .courses-grid-container img {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden;        
+}
+.course:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+    background-color: var(--bg-color-dark);
 }
 
 /* Thesis Exibit */
@@ -195,6 +243,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: inline-flex;
     align-items: center;
 }
+
 .grid-item2-fisma img, .grid-item3-now img{
     width: 32%;
 }
@@ -202,6 +251,12 @@ h1, h2, h3, h4, h5, h6, p {
     grid-area: 2/ 2/ span 1/ span 1;
     display: inline-flex;
     align-items: center;
+}
+.grid-item2-fisma:hover,
+.grid-item3-now:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+    background-color: var(--bg-color-dark);
 }
 
 /* Footer */
@@ -214,7 +269,7 @@ footer{
 footer a{
     display: inline;
     text-decoration: none;
-    color: #4A4A4A;
+    color: var(--text-color);
     padding-right: 20px;
 }
 
@@ -315,11 +370,12 @@ footer a{
     .grid-item2-fisma, .grid-item3-now{
         display: none;
     }
+    /* Footer */
     footer p {
         display: inline-block;
         font-size: 0.7rem;
     }
     footer a{
-        display: none;
+        display: none;        
     }
 }
